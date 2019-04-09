@@ -1,4 +1,4 @@
-(function(window) {
+(function (window) {
 
   /*
    * Create a function named setMyLightGreen
@@ -12,6 +12,10 @@
    * on this dom element, set the className to 'light-green'
    */
 
+  function setMyLightGreen() {
+    let lightId = this.dataset.lightId;
+    document.getElementById(lightId).className = 'light-green';
+  }
 
   /*
    * Create a function named setMyLightClass
@@ -25,6 +29,12 @@
    * on this dom element, set the className to the value of desiredClass
    */
 
+  function setMyLightClass(event, desiredClass) {
+    let lightId = this.dataset.lightId;
+    if (lightId === this.id) {
+      document.getElementById(this.id).className = desiredClass;
+    }
+  }
 
   /*
    * Declare 15 constants btn1, btn2, btn3, ...
@@ -32,6 +42,10 @@
    * to the button that has an id of the same name.
    */
 
+  let btn = [];
+  for (let i = 1; i <= 15; i++) {
+    btn[i] = document.getElementById('btn' + i);
+  }
 
   /*
    * Add a click event listener to btn1
@@ -42,6 +56,9 @@
    * to set the context to the correct object (the current context)
    */
 
+  btn1.addEventListener('click', function () {
+    setMyLightGreen.apply(this)
+  });
 
   /*
    * Add a click event listener to btn2
