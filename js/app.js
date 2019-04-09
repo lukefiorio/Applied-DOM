@@ -31,9 +31,7 @@
 
   function setMyLightClass(event, desiredClass) {
     let lightId = this.dataset.lightId;
-    if (lightId === this.id) {
-      document.getElementById(this.id).className = desiredClass;
-    }
+    document.getElementById(lightId).className = desiredClass;
   }
 
   /*
@@ -68,6 +66,10 @@
    * using the Function prototype method: apply
    * to set the context to the correct object
    */
+
+  btn2.addEventListener('click', () => {
+    setMyLightGreen.apply(btn2)
+  });
 
 
   /*
