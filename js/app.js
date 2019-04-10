@@ -258,7 +258,7 @@
    */
 
   btn14.addEventListener('click', function () {
-
+    setMyLightGreen.bind(btn14)();
   });
 
   /*
@@ -269,9 +269,9 @@
    * Hint: Do not declare a new function expression as an event handler.
    */
 
-  btn15.addEventListener('click', function () {
-
-  });
-
+  //not working
+  btn15.addEventListener('click', (event) => {
+    setMyLightClass.bind(btn15, event, 'light-green');
+  })
 
 }(window));
