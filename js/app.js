@@ -91,6 +91,7 @@
    */
 
   btn4.addEventListener('click', function (event) {
+    //console.log(event);
     setMyLightClass.apply(this, [event, 'light-green']);
   });
 
@@ -270,8 +271,6 @@
    */
 
   //not working
-  btn15.addEventListener('click', (event) => {
-    setMyLightClass.bind(btn15, event, 'light-green');
-  })
+  btn15.addEventListener('click', setMyLightClass.bind(btn15, event, 'light-green'));
 
 }(window));
